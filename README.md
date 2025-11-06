@@ -5,7 +5,7 @@ This project develops a question answering assistant as part of the Murafiq app 
 The steps shown below are all to be executed in the terminal (*command line*), and they assume a windows operating system. If this was not the case, please search for the equivalent macOS/linux commands.
 
 1. Open visual studio on an empty folder.
-2. If you have `git` installed, run `git clone https://github.com/Jana2Shata/Murafiq.git`. Else, manually download the files from this repo.
+2. If you have `git` installed, run `git clone https://github.com/Jana2Shata/Murafiq.git`. Else, manually download the files from this repo: from the (<> code) button -> (Open in visual studio) OR (download zip).
 3. If you don't already have python installed, please download it from this website https://www.python.org/downloads/
 4. Back to your terminal in visual studio, run `python -m venv .venv`
 5. run `.venv\Scripts\activate`
