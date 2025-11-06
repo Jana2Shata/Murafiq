@@ -13,10 +13,7 @@ The steps shown below are all to be executed in the terminal (*command line*), a
 7. run `streamlit run .\code\app.py`
 
 The last step should open a website tap on your browser, but it will take time loading. It's quite normal, so please be patient.
-
 Also note that this loading time requires that you should prepare in advance when wanting to present it.
-
 After it finishes loading, you shall be able to ask any questions and receive responses.
-
 Note that the user interface supports both languages (EN + AR), but the actual question-answering interactions are only supported for EN in this demo.
 
