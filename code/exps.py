@@ -110,7 +110,7 @@ embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-b
 vector_store = Chroma(
     collection_name="onsinization_collection",
     embedding_function=embeddings,
-    persist_directory="./chroma_langchain_db",  # Where to save data locally, remove if not necessary
+    persist_directory="../chroma_langchain_db",  # Where to save data locally, remove if not necessary
 )
 
 # Create documents

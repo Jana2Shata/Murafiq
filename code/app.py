@@ -2,7 +2,37 @@ import streamlit as st
 import os
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
-from exps import get_relative
+from pathlib import Path
+
+print('loading embedding model...')
+
+embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+
+print('embedding model loaded')
+print('connecting to vector store...')
+
+# 1. Get the directory where app.py is located
+current_script_dir = Path(__file__).parent
+
+# 2. Calculate the absolute path to the DB folder
+# Go up one level (..) from 'code' and then into 'chroma_langchain_db'
+DB_PATH = current_script_dir.parent / "chroma_langchain_db"
+
+# Setup Chroma vector store
+vector_store = Chroma(
+    collection_name="onsinization_collection",
+    embedding_function=embeddings,
+    persist_directory= str(DB_PATH) #path #"../chroma_langchain_db",  # Where to save data locally, remove if not necessary
+)
+
+def get_relative(query):
+    retrieved_docs = vector_store.similarity_search(query, k=1)
+    return retrieved_docs
+
+# Check the count immediately after instantiating vector_store in app.py
+count = vector_store._collection.count()
+print('connected to vector store')
+print(f"Documents loaded: {count}")
 
 # ========== Initialize Session State ==========
 if 'language' not in st.session_state:

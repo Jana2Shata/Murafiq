@@ -11,3 +11,4 @@ langchain-google-genai>=0.0.10
 streamlit
 sentence-transformers
 langchain_huggingface
+pyarabic
